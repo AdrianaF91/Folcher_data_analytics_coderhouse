@@ -5,7 +5,7 @@
 ## 📌 Descripción del Proyecto
 Este proyecto forma parte de la certificación en **Data Analytics** de CoderHouse. Consiste en el diseño e implementación de modelo relacional para la empresa ficticia de retail de tecnología **TechStore** (base de datos `Ventas_Tech_DB`).
 
-El objetivo principal es estructurar los datos del negocio garantizando la integridad referencial y cumpliendo con la **Tercera Forma Normal (3NF)**, creando un cimiento sólido para los posteriores análisis, transformaciones y tableros en **Power BI**.
+El proyecto abarca desde la creación, normalización (3NF) e implementación de la base de datos relacional `Ventas_Tech_DB`, hasta la extracción de métricas ejecutivas clave para responder a preguntas estratégicas de negocio.
 
 ---
 
@@ -51,24 +51,25 @@ El esquema relacional está diseñado bajo la Tercera Forma Normal (3NF) y se co
 
 ---
 
-## 🛠️ Contenido del Script SQL (`script_m3_ventas_tech.sql`)
+## ## 📊 Entregables e Implementación SQL
 
-El script está optimizado para su ejecución en **Microsoft SQL Server** y se estructura en las siguientes secciones ordenadas de manera lógica:
+### Módulo 3 — Script de Ingeniería de Datos (`ventas_tech_db.sql`)
+* **Limpieza del Entorno:** Ejecución de `DROP TABLE IF EXISTS` siguiendo el orden inverso de las dependencias para preservar las restricciones de claves foráneas.
+* **Definición DDL:** Creación de tablas e implementación de restricciones `PRIMARY KEY`, `FOREIGN KEY`, `NOT NULL` y `UNIQUE`. Configuración de tipos de datos de precisión exacta como `DECIMAL(10,2)` para campos monetarios y `BIT` para banderas lógicas.
+* **Carga DML:** Inserción ordenada de datos iniciales que incluye 4 categorías, 5 clientes, 6 productos y 10 transacciones en la tabla de hechos `ventas`.
 
-* **Creación y Selección de la Base de Datos**: Inicializa la base de datos `Ventas_Tech_DB` y selecciona el contexto de ejecución.
-* **Limpieza de Entorno (`DROP TABLE IF EXISTS`)**: Remueve las tablas existentes respetando el orden inverso de sus dependencias.
-* **Definición del Esquema Data Definition Language (DDL)**:
-  * Asignación de restricciones de integridad primaria (`PRIMARY KEY`) en cada tabla.
-  * Definición de claves foráneas (`FOREIGN KEY`) en `productos` y `ventas` para garantizar la integridad referencial.
-  * Aplicación de restricciones `NOT NULL` en atributos indispensables (precios, nombres, fechas) y `UNIQUE` en correos electrónicos.
-  * Uso de tipos de datos de precisión exacta como `DECIMAL(10,2)` para importes monetarios y `BIT` para indicadores booleanos.
-* **Carga Inicial Data Manipulation Language (DML)**: Inserción secuencial de datos de prueba en las tablas.
-* **Consultas de Validación**: Sentencias `SELECT` al final del script para verificar que cada tabla se haya creado e insertado correctamente sin errores.
+### Módulo 4 — Consultas SQL de Negocio (`m4_consultas_negocio.sql`)
+* **Consulta 1 — Resumen Ejecutivo Mensual:** Agregación por mes para calcular el total facturado (`cantidad * precio_unitario`), el volumen de pedidos y el ticket promedio utilizando las funciones `YEAR()` y `MONTH()`.
+* **Consulta 2 — Ranking Top 5 de Productos:** Identificación de los 5 productos con mayor facturación y unidades vendidas mediante `GROUP BY id_producto`, ordenamiento descendente y limitación con `TOP 5`.
+* **Consulta 3 — Clientes Recurrentes:** Filtrado de la base de clientes para extraer aquellos con más de una transacción realizada, empleando la cláusula `HAVING COUNT(id_venta) > 1`.
+* **Consulta 4 — Desempeño Mensual vs. Promedio General:** Clasificación dinámica de cada mes (`Por encima` / `Por debajo`) respecto al promedio general de ventas del negocio, sin recurrir a clausulas `JOIN`.
 
----
+## 💡 Principales Hallazgos de Negocio
+
+* **Concentración de la Facturación:** El volumen de ingresos está fuertemente impulsado por artículos de alto valor unitario (como computadoras/laptops), los cuales concentran la mayor parte de la facturación en comparación con los accesorios y periféricos.
+* **Comportamiento y Recurrencia de Clientes:** Se identificaron clientes clave con múltiples transacciones en el período analizado, demostrando patrones iniciales de fidelización que habilitan estrategias de retención o venta cruzada.
+* **Comportamiento Temporal de las Ventas:** La evaluación mensual contra el promedio general evidencia picos de facturación en períodos específicos (como la primera mitad del mes de marzo), lo que permite planificar mejor las campañas comerciales y el reabastecimiento de inventario.
 
 ## 👩‍💻 Autoría y Datos del Proyecto
 
 * **Estudiante:** Adriana Laura Folcher
-* **Programa:** Certificación en Data Analytics
-* **Entregable:** Módulo 3 — Checkpoint: Script SQL de Data Analytics (`Ventas_Tech_DB`)
