@@ -53,7 +53,7 @@ El esquema relacional está diseñado bajo la Tercera Forma Normal (3NF) y se co
 
 ## ## 📊 Entregables e Implementación SQL
 
-### Módulo 3 — Script de Ingeniería de Datos (`ventas_tech_db.sql`)
+### Módulo 3 — Script SQL (`ventas_tech_db.sql`)
 * **Limpieza del Entorno:** Ejecución de `DROP TABLE IF EXISTS` siguiendo el orden inverso de las dependencias para preservar las restricciones de claves foráneas.
 * **Definición DDL:** Creación de tablas e implementación de restricciones `PRIMARY KEY`, `FOREIGN KEY`, `NOT NULL` y `UNIQUE`. Configuración de tipos de datos de precisión exacta como `DECIMAL(10,2)` para campos monetarios y `BIT` para banderas lógicas.
 * **Carga DML:** Inserción ordenada de datos iniciales que incluye 4 categorías, 5 clientes, 6 productos y 10 transacciones en la tabla de hechos `ventas`.
