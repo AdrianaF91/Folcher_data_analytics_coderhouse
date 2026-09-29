@@ -81,5 +81,3 @@ El esquema relacional está diseñado bajo la Tercera Forma Normal (3NF) y se co
 ## 👩‍💻 Autoría y Datos del Proyecto
 
 Adriana Folcher | Analista de datos
-
-* **Estudiante:** Adriana Laura Folcher
