@@ -53,7 +53,7 @@ El esquema relacional está diseñado bajo la Tercera Forma Normal (3NF) y se co
 
 ## ## 📊 Entregables e Implementación SQL
 
-### Módulo 3 — Script SQL (`ventas_tech_db.sql`)
+### Módulo 3 — (`ventas_tech_db.sql`)
 * **Limpieza del Entorno:** Ejecución de `DROP TABLE IF EXISTS` siguiendo el orden inverso de las dependencias para preservar las restricciones de claves foráneas.
 * **Definición DDL:** Creación de tablas e implementación de restricciones `PRIMARY KEY`, `FOREIGN KEY`, `NOT NULL` y `UNIQUE`. Configuración de tipos de datos de precisión exacta como `DECIMAL(10,2)` para campos monetarios y `BIT` para banderas lógicas.
 * **Carga DML:** Inserción ordenada de datos iniciales que incluye 4 categorías, 5 clientes, 6 productos y 10 transacciones en la tabla de hechos `ventas`.
@@ -66,9 +66,9 @@ El esquema relacional está diseñado bajo la Tercera Forma Normal (3NF) y se co
 
 ## 💡 Principales Hallazgos de Negocio
 
-* **Concentración de la Facturación:** El volumen de ingresos está fuertemente impulsado por artículos de alto valor unitario (como computadoras/laptops), los cuales concentran la mayor parte de la facturación en comparación con los accesorios y periféricos.
-* **Comportamiento y Recurrencia de Clientes:** Se identificaron clientes clave con múltiples transacciones en el período analizado, demostrando patrones iniciales de fidelización que habilitan estrategias de retención o venta cruzada.
-* **Comportamiento Temporal de las Ventas:** La evaluación mensual contra el promedio general evidencia picos de facturación en períodos específicos (como la primera mitad del mes de marzo), lo que permite planificar mejor las campañas comerciales y el reabastecimiento de inventario.
+* **Empate en Top de Facturación:** Se detecta un empate exacto en el primer puesto de facturación entre los productos 1 (Laptop Pro 15) y 4 (Auriculares BT Pro), alcanzando cada uno un total de $2.400,00 sobre la muestra analizada.
+* **Comportamiento Recurrente de Clientes:** Se identificaron clientes clave con compras múltiples en el período, destacándose el cliente 1 con 2 pedidos y una facturación acumulada de $3.600,00.
+* **Concentración Temporal de las Ventas:** El mes de marzo de 2024 acumuló una facturación total de $4.821,00, ubicándose por encima del promedio general de ventas del negocio.
 
 ## 👩‍💻 Autoría y Datos del Proyecto
 
