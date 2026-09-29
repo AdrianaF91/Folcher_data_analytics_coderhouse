@@ -70,6 +70,14 @@ El esquema relacional está diseñado bajo la Tercera Forma Normal (3NF) y se co
 * **Comportamiento Recurrente:** El cliente 1 lidera las ventas recurrentes con un gasto acumulado de $3.600,00 distribuido en múltiples operaciones.
 * **Consolidación por Período/Canal:** Al segmentar las ventas por período comercial (ventas iniciales vs. segunda quincena), se observa que la mayor concentración transaccional ocurre en la primera quincena del mes.
 
+## Módulo 5 — Consultas con JOINs (`m5_consultas_joins.sql`)
+
+* **Consulta 1 — Vista Base del Proyecto (INNER JOIN):** Combinación de las tablas `ventas`, `clientes`, `productos` y `categorias` para consolidar un dataset plano y enriquecido que servirá como fuente principal de datos para Power BI.
+* **Consulta 2 — Clientes sin Ventas (LEFT JOIN):** Identificación de clientes registrados que aún no han realizado compras en la plataforma, filtrando donde `v.id_venta IS NULL` para accionar desde el área de CRM.
+* **Consulta 3 — Productos sin Ventas (LEFT JOIN):** Extracción de artículos del catálogo que no registran ningún movimiento de venta (`v.id_venta IS NULL`), permitiendo detectar inventario inmovilizado.
+* **Consulta 4 — Consolidado por Canal / Período Comercial (UNION ALL):** Segmentación de las ventas utilizando un criterio comercial real (primera quincena como canal `Online` vs. segunda quincena como canal `Presencial`), consolidando los datos con `UNION ALL` y agregando el total facturado mediante `GROUP BY`.
+
+
 ## 👩‍💻 Autoría y Datos del Proyecto
 
 Adriana Folcher | Analista de datos
