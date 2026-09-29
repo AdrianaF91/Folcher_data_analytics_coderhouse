@@ -59,6 +59,7 @@ GO
 -- Clasifica las ventas agregando la columna de canal de origen y totaliza con GROUP BY.
 -- -----------------------------------------------------------------------------
 WITH TransaccionesPorCanal AS (
+    -- Ventas realizadas en la primera quincena de marzo (Canal / Origen: Online)
     SELECT 
         id_venta,
         cantidad,
@@ -66,10 +67,11 @@ WITH TransaccionesPorCanal AS (
         (cantidad * precio_unitario) AS total_venta,
         'Online' AS canal
     FROM ventas
-    WHERE id_venta % 2 = 1 -- Simulación: ventas impares asignadas a Online
+    WHERE fecha_venta <= '2024-03-10'
 
     UNION ALL
 
+    -- Ventas realizadas a partir del 11 de marzo (Canal / Origen: Presencial)
     SELECT 
         id_venta,
         cantidad,
@@ -77,7 +79,7 @@ WITH TransaccionesPorCanal AS (
         (cantidad * precio_unitario) AS total_venta,
         'Presencial' AS canal
     FROM ventas
-    WHERE id_venta % 2 = 0 -- Simulación: ventas pares asignadas a Presencial
+    WHERE fecha_venta > '2024-03-10'
 )
 SELECT 
     canal,
