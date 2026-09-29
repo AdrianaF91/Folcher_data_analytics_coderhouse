@@ -66,10 +66,12 @@ El esquema relacional está diseñado bajo la Tercera Forma Normal (3NF) y se co
 
 ## 💡 Principales Hallazgos de Negocio
 
-* **Empate en Top de Facturación:** Se detecta un empate exacto en el primer puesto de facturación entre los productos 1 (Laptop Pro 15) y 4 (Auriculares BT Pro), alcanzando cada uno un total de $2.400,00 sobre la muestra analizada.
-* **Comportamiento Recurrente de Clientes:** Se identificaron clientes clave con compras múltiples en el período, destacándose el cliente 1 con 2 pedidos y una facturación acumulada de $3.600,00.
-* **Concentración Temporal de las Ventas:** El mes de marzo de 2024 acumuló una facturación total de $4.821,00, ubicándose por encima del promedio general de ventas del negocio.
+* **Empate en Top de Facturación:** Se detecta un empate exacto en facturación entre los productos 1 (Laptop Pro 15) y 4 (Auriculares BT Pro), alcanzando cada uno $2.400,00 en el período analizado.
+* **Comportamiento Recurrente:** El cliente 1 lidera las ventas recurrentes con un gasto acumulado de $3.600,00 distribuido en múltiples operaciones.
+* **Consolidación por Período/Canal:** Al segmentar las ventas por período comercial (ventas iniciales vs. segunda quincena), se observa que la mayor concentración transaccional ocurre en la primera quincena del mes.
 
 ## 👩‍💻 Autoría y Datos del Proyecto
+
+Adriana Folcher | Analista de datos
 
 * **Estudiante:** Adriana Laura Folcher
