@@ -8,6 +8,23 @@ Este proyecto forma parte de la certificación en **Data Analytics** de CoderHou
 El proyecto abarca desde la creación, normalización (3NF) e implementación de la base de datos relacional `Ventas_Tech_DB`, hasta la extracción de métricas ejecutivas clave para responder a preguntas estratégicas de negocio.
 
 ---
+## 🛠️ Tecnologías y Herramientas
+* **Motor BD:** SQL Server (T-SQL)
+* **ETL & Limpieza:** Power Query / Lenguaje M
+* **Modelado & DAX:** Power BI Desktop
+* **Control de Versiones:** GitHub
+
+---
+
+## 📂 Estructura del Repositorio y Scripts SQL
+
+Para replicar el entorno de datos, ejecute los scripts guardados en la carpeta de entregables en el siguiente orden:
+
+1. **`m3_ventas_tech.sql` (DDL / DML):** Crea la base de datos `Ventas_Tech_DB` y las tablas relacionales en 3NF (`Dim_Clientes`, `Dim_Productos`, `Dim_Categorias`, `Fact_Ventas`) e inserta el dataset inicial.
+2. **`m4_consultas_negocio.sql` (Consultas y Métricas):** Contiene los rankings de facturación por producto, clientes recurrentes y ventas por período.
+3. **`m5_consultas_joins.sql` (Consolidación Multidimensional):** Implementa `INNER JOIN` y `LEFT JOIN` para la vista consolidada de transacciones.
+
+---
 
 ## 🗂️ Modelo de Datos (Esquema Relacional)
 
